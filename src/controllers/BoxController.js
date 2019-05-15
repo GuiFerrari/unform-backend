@@ -2,7 +2,7 @@ const Box = require('../models/Box');
 
 class BoxController {
     async show(req, res) {
-        const box = await Box.find();
+        const box = await Box.find().sort({ _id: -1 });
         return res.json(box);
     }
 
