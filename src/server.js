@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
@@ -7,6 +8,7 @@ mongoose.connect('mongodb+srv://admin:adminadmin@cluster0-dhg7o.mongodb.net/unfo
     useNewUrlParser: true
 })
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
